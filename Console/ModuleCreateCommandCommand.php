@@ -144,7 +144,8 @@ class ModuleCreateCommandCommand extends BaseCommand
         }
 
         if (null == $commandAlias) {
-            $question = $this->getNormalQuestionString('Command Alias', 'namespace:command');
+            $namespaces = $this->getApplication()->getNamespaces();
+            $question = $this->getNormalQuestionString('Command Alias', 'namespace:command', $namespaces);
             $commandAlias = $helper->ask($input, $output, $question);
         }
 
