@@ -1,0 +1,25 @@
+{
+    "name": "shelf/module-manager",
+    "type": "shelf-module",
+    "authors": [
+        {
+            "name": "Rafael Ortega Bueno",
+            "email": "rorteg@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Shelf\\ModuleManager\\" : ""
+        }
+    },
+    "require": {
+        "doctrine/collections": "^1.4",
+        "symfony/finder": "^3.4",
+        "composer/composer": "^1.6",
+        "symfony/filesystem": "^3.4",
+        "zendframework/zend-code": "^3.1"
+    },
+    "require-dev": {
+        "mikey179/vfsStream": "^1.6"
+    }
+}
