@@ -24,6 +24,8 @@ class CommandTemplateToReflection extends Command
      * execute() method, you set the code to execute by passing
      * a Closure to the setCode() method.
      *
+     * @param Input $input
+     * @param OutputInterface $output
      * @return null|int null or 0 if everything went fine, or an error code
      *
      * @throws LogicException When this abstract method is not implemented
@@ -34,5 +36,4 @@ class CommandTemplateToReflection extends Command
     {
         // @todo implement execute()
     }
-
 }
