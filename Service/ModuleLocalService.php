@@ -60,6 +60,10 @@ class ModuleLocalService
      */
     private function getLocalModulesComposerSettings()
     {
+        if (! is_dir(BP . DIRECTORY_SEPARATOR . Module::MODULE_LOCAL_PATH)) {
+            return [];
+        }
+
         $finder = new Finder();
         $localModulesComposerSettings = array_map(function ($composerFile) {
             $composerSettingsArray = json_decode(file_get_contents($composerFile), true);
