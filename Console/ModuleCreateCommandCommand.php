@@ -3,6 +3,7 @@
 namespace Shelf\ModuleManager\Console;
 
 use Shelf\Config\ConfigFactoryAdapter;
+use Shelf\Config\ConfigInterface;
 use Shelf\Console\Api\ShelfConsoleInterface;
 use Shelf\ModuleManager\Helper\Data as DataHelper;
 use Shelf\ModuleManager\Model\ModuleInterface;
@@ -181,7 +182,7 @@ class ModuleCreateCommandCommand extends BaseCommand
 
     private function updateModuleSettings(ModuleInterface $module, $commandName)
     {
-        $moduleConfigPath = $module->getLocalPathName() . '/etc';
+        $moduleConfigPath = $module->getLocalPathName() . '/' . ConfigInterface::CONFG_FOLDER_NAME;
 
         if (! is_dir($moduleConfigPath)) {
             $this->fs->mkdir($moduleConfigPath);
