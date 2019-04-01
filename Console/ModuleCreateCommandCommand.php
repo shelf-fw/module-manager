@@ -188,9 +188,11 @@ class ModuleCreateCommandCommand extends BaseCommand
             $this->fs->mkdir($moduleConfigPath);
         }
 
-        $fileSettings = array_map(function(SplFileInfo $file) {
+        $fileSettings = array_filter(array_map(function(SplFileInfo $file) {
             return $file->getPathName();
-        }, iterator_to_array($this->finder->files()->in($moduleConfigPath)));
+        }, iterator_to_array($this->finder->files()->in($moduleConfigPath))), function ($file) use ($moduleConfigPath) {
+            return $file == $moduleConfigPath . '/console.php';
+        });
 
         $newConfig = new \Zend\Config\Config([
             ShelfConsoleInterface::SHELF_APPLICATION_KEY => [
