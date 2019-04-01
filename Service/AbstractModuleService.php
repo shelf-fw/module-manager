@@ -2,11 +2,14 @@
 
 namespace Shelf\ModuleManager\Service;
 
+use Shelf\ModuleManager\Model\Module;
+use Shelf\ModuleManager\Model\ModuleCollection;
+
 abstract class AbstractModuleService implements ModuleServiceInterface
 {
     /**
      * Collection of Modules
-     * @return Collection
+     * @return ModuleCollection
      */
     abstract function getCollection();
 

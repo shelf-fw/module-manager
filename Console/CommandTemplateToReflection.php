@@ -35,5 +35,6 @@ class CommandTemplateToReflection extends Command
     protected function execute(Input $input, OutputInterface $output)
     {
         // @todo implement execute()
+        $output->writeln('@todo implement this Command.');
     }
 }
