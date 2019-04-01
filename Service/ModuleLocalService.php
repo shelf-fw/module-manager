@@ -38,6 +38,11 @@ class ModuleLocalService
     {
         $localModuleComposerSettings = $this->getLocalModulesComposerSettings();
 
+        if (! count($localModuleComposerSettings)) {
+            $this->_items = [];
+            return;
+        }
+
         foreach ($localModuleComposerSettings as $composerConfig) {
             $module = new Module();
             $module
